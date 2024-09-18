@@ -1,5 +1,5 @@
 # Draft
- '''
+'''
 def user_name(name):
     return name
 
@@ -16,10 +16,10 @@ user_name = user_name(temp_name)
 ui_scale = ui_input(temp_ui_width, temp_ui_height)
 
 print(user_name, ui_scale)
- '''
+'''
 
 #>>> first line
- ''''
+'''
 height = 6
 
 first_line = (("*"*10) * height)+"*"
@@ -46,4 +46,3 @@ second_line(height)
 print(first_line)
 '''
 
- 
