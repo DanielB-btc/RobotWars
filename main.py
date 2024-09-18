@@ -1,10 +1,16 @@
 def user_name(name):
-    name = input("Enter your name: ")
     return name
 
-def ui_input(username, width, height):
-    username = input("Enter your name: ")
-    width = input("Enter your width: ")
-    height = input("Enter your height: ")
-    return username, width, height
 
+def ui_input(width, height):
+    return width, height
+
+
+temp_name = input("Enter your name")
+temp_ui_width = input("Width")
+temp_ui_height = input("Height")
+
+user_name = user_name(temp_name)
+ui_scale = ui_input(temp_ui_width, temp_ui_height)
+
+print(user_name, ui_scale)
