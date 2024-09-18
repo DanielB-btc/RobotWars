@@ -19,7 +19,7 @@ print(user_name, ui_scale)
 '''
 
 #>>> first line
-'''
+
 height = 6
 
 first_line = (("*"*10) * height)+"*"
@@ -44,5 +44,5 @@ second_line(height)
 print(first_line)
 second_line(height)
 print(first_line)
-'''
+
 
