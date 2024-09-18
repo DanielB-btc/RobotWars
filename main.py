@@ -14,3 +14,24 @@ user_name = user_name(temp_name)
 ui_scale = ui_input(temp_ui_width, temp_ui_height)
 
 print(user_name, ui_scale)
+
+
+# TEMP DON'T STEAL
+print(first_line)
+
+def second_line(width):
+    stern = "*"
+    space = " "
+    second_line = ((stern + space *9)*width)+stern
+    while width >0:
+        print(second_line)
+        width -= 1
+
+second_line(height)
+
+print(first_line)
+
+second_line(height)
+print(first_line)
+second_line(height)
+print(first_line)
