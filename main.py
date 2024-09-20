@@ -61,7 +61,7 @@ while run:
             HP = load_list[1][:-1]
             ATK = load_list[2][:-1]
             clear()
-            print("Welcome back" + name +"!")
+            print("Welcome back " + name +"!")
             input("> ")
             menu = False
             play = True
