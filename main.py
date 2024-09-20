@@ -5,7 +5,7 @@ menu = True
 play = False
 rules = False
 
-HP = 50 #temp placeholder
+HP = 50
 ATK = 3
 
 def clear():
