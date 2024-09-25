@@ -1,4 +1,4 @@
-import os
+import os, maptestmain
 from AASCII import logo
 
 run = True
@@ -88,7 +88,7 @@ def save():
 while run:
     while menu:
         clear()
-        logo()
+        print(logo())
         input("> ")
         clear()
         draw()
@@ -155,6 +155,7 @@ while run:
         print("POTIONS: " + str(pot))
         print("ELIXIRS: " + str(elix))
         print("GOLD: " + str(gold))
+        print("COORDINATES: " + str(x) + "," + str(y))
         draw()
         print("0 - SAVE AND QUIT")
         if y > 0:

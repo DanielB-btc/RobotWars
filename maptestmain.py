@@ -1,4 +1,7 @@
 from maptest import Map
+import os
+
+os.system("")
 
 
 def run() -> None:

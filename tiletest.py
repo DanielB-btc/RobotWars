@@ -8,12 +8,22 @@ ANSI_MAGENTA = "\033[35m"
 ANSI_CYAN = "\033[36m"
 
 
+"""
+colored example: 
+tile = Tile("x", ANSI_RED)
+
+non-colored example:
+tile = Tile("x")
+"""
+
+
 class Tile:
-    def __init__(self, symbol: str, color: str = ANSI_RESET, colored: bool = True):
-        self.symbol = f"{color}{symbol}{ANSI_RESET}" if colored else symbol
+    def __init__(self, symbol: str, color: str | None = None):
+        self.symbol = f"{color}{symbol}{ANSI_RESET}" if color else symbol
 
-#       if colored:
-#           self.symbol = f"{color}{symbol}{ANSI_RESET}"
-#       else:
-#           self.symbol = symbol
 
+plains = Tile(".", ANSI_YELLOW)
+forest = Tile("8", ANSI_GREEN)
+pines = Tile("Y", ANSI_GREEN)
+mountain = Tile("A", ANSI_WHITE)
+water = Tile("~", ANSI_CYAN)
