@@ -1,4 +1,5 @@
 import os
+from AASCII import logo
 
 run = True
 menu = True
@@ -86,6 +87,9 @@ def save():
 
 while run:
     while menu:
+        clear()
+        logo()
+        input("> ")
         clear()
         draw()
         print("1, NEW GAME")
