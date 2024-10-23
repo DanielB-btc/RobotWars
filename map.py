@@ -92,7 +92,6 @@ class Map:
             [1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1],
             [0, 1, 1, 1, 0],
-
         ]
         for y_index in sight_range:
             tile_y = y + y_index
