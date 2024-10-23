@@ -140,12 +140,12 @@ while run:
             quit()
 
     while play:
-        while new_map == True:
+        while new_map:
             if __name__ == "__main__":
                 map_w, map_h = 30, 20
                 game_map = Map(map_w, map_h)
                 new_map = False
-        save()  # autosave
+        save()
         clear()
         game_map.display_map()
         draw()
