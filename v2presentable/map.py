@@ -1,5 +1,5 @@
 from random import randint
-from tiletest import Tile, plains, forest, pines, mountain, water
+from tiles import Tile, plains, forest, pines, mountain, water
 
 
 class Map:

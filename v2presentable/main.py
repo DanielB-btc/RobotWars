@@ -1,31 +1,37 @@
-import os, maptestmain
+import os
 from AASCII import logo
+from map import Map
 
 run = True
 menu = True
 play = False
 rules = False
 key = False
+new_map = True
 
 HP = 50
 HPMAX = HP
 ATK = 3
-pot = 0
-elix = 0
-gold = 0
+core= 0
+coin = 0
 x = 0
 y = 0
 
-map = [["plains",   "plains",   "plains",   "plains",   "forest", "mountain",       "cave"],
-       ["forest",   "forest",   "forest",   "forest",   "forest",    "hills",   "mountain"],
-       ["forest",   "fields",   "bridge",   "plains",    "hills",   "forest",      "hills"],
-       ["plains",     "shop",     "town",    "mayor",   "plains",    "hills",   "mountain"],
-       ["plains",   "fields",   "fields",   "plains",    "hills", "mountain",   "mountain"]]
+map =  [["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"],
+        ["plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains","plains"]]
 
 y_len = len(map)-1
 x_len = len(map[0])-1
 
-biom = {
+tile = {
     "plains": {
         "t": "PLAINS",
         "e": True},
@@ -38,17 +44,8 @@ biom = {
     "bridge": {
         "t": "BRIGE",
         "e": True},
-    "town": {
-        "t": "TOWN CENTRE",
-        "e": False},
     "shop": {
         "t": "SHOP",
-        "e": False},
-    "mayor": {
-        "t": "MAYOR",
-        "e": False},
-    "cave": {
-        "t": "CAVE",
         "e": False},
     "mountain": {
         "t": "MOUNTAIN",
@@ -59,24 +56,23 @@ biom = {
     }
 }
 
-
 def clear():
     os.system("cls")
 
 def draw():
-    print("Xx------------------------xX")
+    print("Xx-------------------xX")
 
 def save():
-    list =[
+    list = [
         name,
         str(HP),
         str(ATK),
-        str(pot),
-        str(elix),
-        str(gold),
+        str(core),
+        str(coin),
         str(x),
         str(y),
-        str(key)
+        str(key),
+        str(new_map)
     ]
 
     f = open("load.txt", "w")
@@ -121,12 +117,12 @@ while run:
                     name = load_list[0][:-1]
                     HP = int(load_list[1][:-1])
                     ATK = int(load_list[2][:-1])
-                    pot = int(load_list[3][:-1])
-                    elix = int(load_list[4][:-1])
-                    gold = int(load_list[5][:-1])
-                    x = int(load_list[6][:-1])
-                    y = int(load_list[7][:-1])
-                    key = bool(load_list[8][:-1])
+                    core = int(load_list[3][:-1])
+                    coin = int(load_list[4][:-1])
+                    x = int(load_list[5][:-1])
+                    y = int(load_list[6][:-1])
+                    key = bool(load_list[7][:-1])
+                    new_map = bool(load_list[8][:-1])
                     clear()
                     print("Welcome back " + name +"!")
                     input("> ")
@@ -144,17 +140,22 @@ while run:
             quit()
 
     while play:
+        while new_map == True:
+            if __name__ == "__main__":
+                map_w, map_h = 30, 20
+                game_map = Map(map_w, map_h)
+                new_map = False
         save()  # autosave
         clear()
+        game_map.display_map()
         draw()
-        print("LOCATION: " + biom[map[y][x]]["t"])
+        print("LOCATION: " + tile[map[y][x]]["t"])
         draw()
         print("NAME: " + name)
         print("HP: " + str(HP) + "/" + str(HPMAX))
         print("ATK: " + str(ATK))
-        print("POTIONS: " + str(pot))
-        print("ELIXIRS: " + str(elix))
-        print("GOLD: " + str(gold))
+        print("CORES: " + str(core))
+        print("COINS: " + str(coin))
         print("COORDINATES: " + str(x) + "," + str(y))
         draw()
         print("0 - SAVE AND QUIT")
