@@ -1,6 +1,7 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/v2presentable/load.txt
 # Editor-based HTTP Client requests
 /httpRequests/
 # Datasource local storage ignored files
